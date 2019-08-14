@@ -18,13 +18,13 @@
 
                                     <form [formGroup]="formData" (submit)="handleSubmit()" class="user">
                                         <div class="form-group">
-                                            <input type="text" class="form-control form-control-user"
-                                                   formControlName="login"
-                                                   placeholder="Escreva seu login.">
+                                            <input type="email" class="form-control form-control-user"
+                                                   formControlName="email"
+                                                   placeholder="Digite seu email.">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
-                                                   formControlName="senha" placeholder="senha">
+                                                   formControlName="password" placeholder="senha">
                                         </div>
 
                                         <button type="submit" [disabled]="!formData.valid" class="btn btn-primary btn-user btn-block">
