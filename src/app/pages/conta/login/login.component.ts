@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
         if (!this.formData.valid) {
             return;
         }
-
+        console.log('to aqui');
         this.api.login("conta/login", this.formData.value).subscribe(
             response => {
                 this.notifier.notify("success", "Login efetuado com sucesso");
@@ -44,6 +44,7 @@ export class LoginComponent implements OnInit {
                 location.href = '/dashboard';
             },
             error => {
+                console.log('erro');
                 this.notifier.notify("error", error.message);
             }
         );
