@@ -4,7 +4,7 @@ import {ApiService} from "../../../services/api.service";
 import {JwtTokenService} from "../../../services/jwt-token.service";
 import {LocalStorageService} from "../../../services/local-storage.service";
 import {Router} from "@angular/router";
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
     selector: 'app-login',
@@ -14,6 +14,7 @@ import {FormBuilder, FormGroup} from "@angular/forms";
 export class LoginComponent implements OnInit {
     public formData: FormGroup;
     private readonly notifier: NotifierService;
+    private title = 'Meu Imovel';
 
     constructor(
         private api: ApiService,
@@ -50,8 +51,8 @@ export class LoginComponent implements OnInit {
 
     private buildForm(): void {
         this.formData = this.formBuilder.group({
-            Login: [null, Validators.required],
-            Senha: [null, Validators.required]
+            login: [null, Validators.required],
+            senha: [null, Validators.required]
         });
     }
 }
