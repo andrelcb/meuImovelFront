@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
         private formBuilder: FormBuilder,
         private session: LocalStorageService,
         private router: Router,
-        private notifierService: NotifierService
+        notifierService: NotifierService
     ) {
         this.notifier = notifierService;
     }
@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
         this.buildForm();
     }
 
-    private handleSubmit() {
+    public handleSubmit() {
         if (!this.formData.valid) {
             return;
         }
@@ -41,8 +41,8 @@ export class LoginComponent implements OnInit {
                 this.token.token = response.token;
                 location.href = '/dashboard';
             },
-            error => {
-                this.notifier.notify("error", error);
+            data => {
+                this.notifier.notify("error", data.error.data.msg);
             }
         );
     }
