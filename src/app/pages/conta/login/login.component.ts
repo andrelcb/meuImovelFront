@@ -39,7 +39,9 @@ export class LoginComponent implements OnInit {
             response => {
                 this.notifier.notify("success", "Login efetuado com sucesso");
                 this.token.token = response.token;
-                location.href = '/dashboard';
+                if(this.token) {
+                    location.href = '/dashboard';
+                }
             },
             data => {
                 this.notifier.notify("error", data.error.data.msg);
