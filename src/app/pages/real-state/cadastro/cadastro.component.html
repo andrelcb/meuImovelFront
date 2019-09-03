@@ -1,26 +1,30 @@
 <app-template-admin titulo="formRealState">
     <div class="card shadow mb-4">
-        <div class="card-header py-3"><h6>{{titulo}}</h6></div>
+        <div class="card-header py-3">
+            <h6>{{titulo}}</h6>
+        </div>
         <div class="card-body">
-            <form>
+            <form [formGroup]="formData" (submit)="handleSubmit()" class="real-state">
                 <div class="form row">
                     <div class="col-sm-4">
                         <div class="form-group">
-                            <label for="title">Title</label>
-                            <input type="text" class="form-control" id="title" placeholder="Title" required="">
+                            <label for="title">{{title}}</label>
+                            <input type="text" form class="form-control" id="title" placeholder="Title" required=""
+                                formControlName="title">
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label for="description">Description</label>
                             <input type="text" class="form-control" id="description" placeholder="Description"
-                                   required="">
+                                required="" formControlName="description">
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label for="description">Content</label>
-                            <input type="text" class="form-control" id="content" placeholder="Content" required="">
+                            <input type="text" class="form-control" id="content" placeholder="Content" required=""
+                                formControlName="content">
                         </div>
                     </div>
                 </div>
@@ -28,19 +32,22 @@
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label for="title">Price</label>
-                            <input type="text" class="form-control" id="price" placeholder="Price" required="">
+                            <input type="text" class="form-control" id="price" placeholder="Price" required=""
+                                formControlName="price">
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label for="description">Bathrooms</label>
-                            <input type="number" class="form-control" id="bathrooms" placeholder="Bathrooms" required="">
+                            <input type="number" class="form-control" id="bathrooms" placeholder="Bathrooms" required=""
+                                formControlName="bathrooms">
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label for="description">bedrooms</label>
-                            <input type="number" class="form-control" id="bedrooms" placeholder="bedrooms" required="">
+                            <input type="number" class="form-control" id="bedrooms" placeholder="bedrooms" required=""
+                                formControlName="bedrooms">
                         </div>
                     </div>
                 </div>
@@ -49,23 +56,24 @@
                         <div class="form-group">
                             <label for="title">Property Area</label>
                             <input type="number" class="form-control" id="propertyArea" placeholder="Property Area"
-                                   required="">
+                                required="" formControlName="propertyArea">
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label for="description">Total Property Area</label>
                             <input type="number" class="form-control" id="totalPropertyArea"
-                                   placeholder="Total Property Area" required="">
+                                placeholder="Total Property Area" required="" formControlName="totalPropertyArea">
                         </div>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="col-sm-12">
-                        <button class="btn btn-primary btn-icon-split btn-sm">
+                        <button type="submit" [disabled]="formData.invalid"
+                            class="btn btn-primary btn-icon-split btn-sm">
                             <span class="icon text-white-50">
-                              <i class="far fa-save"></i>
+                                <i class="far fa-save"></i>
                             </span>
                             <span class="text">Salvar</span>
                         </button>

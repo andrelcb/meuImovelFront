@@ -3,11 +3,11 @@ import {NgModule} from '@angular/core';
 import {RealStateRoutingModule} from './real-state-routing.module';
 import {ListarComponent} from './listar/listar.component';
 import {SharedModule} from "../../shared/shared.module";
-import { FormComponent } from './form/form.component';
+import { CadastroComponent } from './cadastro/cadastro.component';
 
 
 @NgModule({
-    declarations: [ListarComponent, FormComponent],
+    declarations: [ListarComponent, CadastroComponent],
     imports: [
         SharedModule,
         RealStateRoutingModule

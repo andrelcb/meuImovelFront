@@ -4,7 +4,7 @@ import { GuardRouterService } from './services/guard-router.service';
 
 
 const routes: Routes = [
-    { path: '', redirectTo: '/conta', pathMatch: 'full' },
+    { path: '', redirectTo: '/conta/login', pathMatch: 'full' },
     { path: 'conta', loadChildren: './pages/conta/conta.module#ContaModule' },
     { path: 'dashboard', loadChildren: './pages/dashboard/dashboard.module#DashboardModule', canActivate: [GuardRouterService] },
     { path: 'real-state', loadChildren: './pages/real-state/real-state.module#RealStateModule', canActivate: [GuardRouterService] },
