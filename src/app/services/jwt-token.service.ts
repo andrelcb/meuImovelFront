@@ -1,19 +1,21 @@
 import {Injectable} from '@angular/core';
 import {LocalStorageService} from "./local-storage.service";
-const TOKEN_KEY = 'token';
+
 @Injectable({
     providedIn: 'root'
 })
 export class JwtTokenService {
 
+    private key = 'token'
+    
     constructor(private session: LocalStorageService) {
     }
 
     get token(): any {
-        return this.session.get(TOKEN_KEY);
+        return this.session.get(this.key);
     }
 
     set token(value) {
-        value ? this.session.set(TOKEN_KEY, value) : this.session.remove(TOKEN_KEY);
+        value ? this.session.set(this.key, value) : this.session.remove(this.key);
     }
 }

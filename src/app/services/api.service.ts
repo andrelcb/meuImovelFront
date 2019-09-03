@@ -13,21 +13,14 @@ export class ApiService {
 
   constructor(
     private http: HttpClient,
-    private session: LocalStorageService,
     private tokenService: JwtTokenService
   ) {}
 
   get httpOptions() {
     return {
       "Content-Type": "application/json",
-      'Authorization': `Bearer ${this.tokenService.token}`,
+      Authorization: `Bearer ${this.tokenService.token}`
     };
-  }
-
-  public login(url: string, data: any): Observable<any> {
-    return this.http
-      .post(`${this.baseUrl}${url}`, data, { headers: this.httpOptions })
-      .pipe(catchError(this.handleError));
   }
 
   public get(url: string, param: any = null): Observable<any> {

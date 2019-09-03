@@ -6,6 +6,7 @@ import {TemplateAdminComponent} from './components/template-admin/template-admin
 import {TemplateContaComponent} from './components/template-conta/template-conta.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {NotifierModule} from "angular-notifier";
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
     declarations: [TemplateAdminComponent, TemplateContaComponent],
@@ -14,6 +15,7 @@ import {NotifierModule} from "angular-notifier";
         RouterModule,
         FormsModule,
         ReactiveFormsModule,
+        ComponentsModule,
         NotifierModule.withConfig({
             position: {
                 horizontal: {position: 'right'},
@@ -29,6 +31,7 @@ import {NotifierModule} from "angular-notifier";
         FormsModule,
         ReactiveFormsModule,
         NotifierModule,
+        ComponentsModule
     ]
 })
 export class SharedModule {

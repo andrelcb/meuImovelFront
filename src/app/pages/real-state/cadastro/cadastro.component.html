@@ -1,6 +1,7 @@
 <app-template-admin titulo="formRealState">
     <div class="card shadow mb-4">
         <div class="card-header py-3">
+            <app-load *ngIf="load"></app-load>
             <h6>{{titulo}}</h6>
         </div>
         <div class="card-body">
@@ -8,7 +9,7 @@
                 <div class="form row">
                     <div class="col-sm-4">
                         <div class="form-group">
-                            <label for="title">{{title}}</label>
+                            <label for="title">Title</label>
                             <input type="text" form class="form-control" id="title" placeholder="Title" required=""
                                 formControlName="title">
                         </div>
@@ -23,8 +24,8 @@
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label for="description">Content</label>
-                            <input type="text" class="form-control" id="content" placeholder="Content" required=""
-                                formControlName="content">
+                            <input type="text" class="form-control" id="cotent" placeholder="Cotent" required=""
+                                formControlName="cotent">
                         </div>
                     </div>
                 </div>
@@ -56,14 +57,14 @@
                         <div class="form-group">
                             <label for="title">Property Area</label>
                             <input type="number" class="form-control" id="propertyArea" placeholder="Property Area"
-                                required="" formControlName="propertyArea">
+                                required="" formControlName="property_area">
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label for="description">Total Property Area</label>
                             <input type="number" class="form-control" id="totalPropertyArea"
-                                placeholder="Total Property Area" required="" formControlName="totalPropertyArea">
+                                placeholder="Total Property Area" required="" formControlName="total_property_area">
                         </div>
                     </div>
                 </div>

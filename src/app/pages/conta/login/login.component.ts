@@ -35,12 +35,15 @@ export class LoginComponent implements OnInit {
     if (!this.formData.valid) {
       return;
     }
-    this.api.login("conta/login", this.formData.value).subscribe(
+    this.api.post("conta/login", this.formData.value).subscribe(
       response => {
         this.notifier.notify("success", "Login efetuado com sucesso");
         this.token.token = response.token;
+        this.session.setObject('user', response.user);
         if (this.token) {
-          location.href = "/dashboard";
+            setTimeout(() => {
+                this.router.navigateByUrl('dashboard');
+            }, 1000);
         }
       },
       data => {
