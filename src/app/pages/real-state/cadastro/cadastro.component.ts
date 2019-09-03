@@ -44,9 +44,7 @@ export class CadastroComponent implements OnInit {
     this.api.post('real-states', this.formData.value).subscribe(
       response => {
         this.load = false
-        console.log(response.data.msg);
         this.notifier.notify("success", response.data.msg);
-
         this.formData.reset();
       },
       data => {

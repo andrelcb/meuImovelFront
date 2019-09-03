@@ -4,9 +4,9 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <a routerLink="cadastro" class="btn btn-primary btn-icon-split btn-sm">
-                    <span class="icon text-white-50">
-                      <i class="fas fa-plus"></i>
-                    </span>
+                <span class="icon text-white-50">
+                    <i class="fas fa-plus"></i>
+                </span>
                 <span class="text">Adicionar</span>
             </a>
         </div>
@@ -14,22 +14,33 @@
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Usuario</th>
-                        <th>Title</th>
-                        <th>Description</th>
-                        <th>Content</th>
-                        <th>Price</th>
-                        <th>Bathrooms</th>
-                        <th>Bedrooms</th>
-                        <th>Property Area</th>
-                        <th>Total Propert Area</th>
-                        <th>Created At</th>
-                    </tr>
+                        <tr>
+                            <th>#</th>
+                            <th>Usuario</th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Content</th>
+                            <th>Price</th>
+                            <th>Bathrooms</th>
+                            <th>Bedrooms</th>
+                            <th>Property Area</th>
+                            <th>Total Propert Area</th>
+                            <th>Created At</th>
+                        </tr>
                     </thead>
                     <tbody>
-                    <tr></tr>
+                        <tr *ngFor="let realStates of realState">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
