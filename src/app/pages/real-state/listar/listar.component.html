@@ -9,6 +9,7 @@
                 </span>
                 <span class="text">Adicionar</span>
             </a>
+            <button [swal]="deleteSwal">Delete</button>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -26,20 +27,30 @@
                             <th>Property Area</th>
                             <th>Total Propert Area</th>
                             <th>Created At</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let realStates of realState">
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                        <tr *ngFor="let realState of realStates">
+                            <td>{{ realState.id }}</td>
+                            <td>{{ realState.user.name }}</td>
+                            <td>{{ realState.title }}</td>
+                            <td>{{ realState.description }}</td>
+                            <td>{{ realState.cotent }}</td>
+                            <td>{{ realState.price }}</td>
+                            <td>{{ realState.bathrooms }}</td>
+                            <td>{{ realState.bedrooms }}</td>
+                            <td>{{ realState.property_area }}</td>
+                            <td>{{ realState.total_property_area }}</td>
+                            <td>{{ realState.created_at }}</td>
+                            <td>
+                                <a href="#" class="btn btn-danger btn-circle btn-sm">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                                <a href="#" class="btn btn-info btn-circle btn-sm">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -47,3 +58,13 @@
         </div>
     </div>
 </app-template-admin>
+
+<swal
+  #deleteSwal
+  title="TESTE"
+  text="This cannot be undone"
+  type="question"
+  [showCancelButton]="true"
+  [focusCancel]="true"
+  (confirm)="deleteFile(file)">
+</swal>

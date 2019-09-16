@@ -11,6 +11,7 @@ export class ListarComponent implements OnInit {
   public realStates: any;
   private load = false;
   constructor(private api:ApiService) { }
+
   ngOnInit() {
     this.getRealStates();
   }
@@ -22,6 +23,8 @@ export class ListarComponent implements OnInit {
         this.load = false;
 
         this.realStates = response.data;
+
+        console.log(this.realStates);
       },
      data => {
       console.log(data.error.msg);

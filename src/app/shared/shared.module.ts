@@ -7,6 +7,7 @@ import {TemplateContaComponent} from './components/template-conta/template-conta
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {NotifierModule} from "angular-notifier";
 import { ComponentsModule } from '../components/components.module';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 @NgModule({
     declarations: [TemplateAdminComponent, TemplateContaComponent],
@@ -16,6 +17,7 @@ import { ComponentsModule } from '../components/components.module';
         FormsModule,
         ReactiveFormsModule,
         ComponentsModule,
+        [SweetAlert2Module.forRoot()],
         NotifierModule.withConfig({
             position: {
                 horizontal: {position: 'right'},
@@ -31,7 +33,8 @@ import { ComponentsModule } from '../components/components.module';
         FormsModule,
         ReactiveFormsModule,
         NotifierModule,
-        ComponentsModule
+        ComponentsModule,
+        SweetAlert2Module
     ]
 })
 export class SharedModule {
